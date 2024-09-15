@@ -1,0 +1,18 @@
+<h1>Listado de heroes</h1>
+
+<ul>
+<li *ngFor="let item of heroes" class="list-group-item">{{item}}</li>
+</ul>
+
+<button *ngIf="heroes.length>0" class="btn btn-outline-danger" (click)="removeFirstHero()">
+  eliminar primer heroe
+</button>
+
+<ul *ngIf="deletesHeroes.length>0;else notingWasDeleted">
+  <h1>heroes Eliminados</h1>
+  <li *ngFor="let item of deletesHeroes" class="list-group-item">{{item}}</li>
+</ul>
+
+<ng-template #notingWasDeleted>
+<h1>No se ha eliminado ningun heroe</h1>
+</ng-template>
