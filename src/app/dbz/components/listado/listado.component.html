@@ -1,0 +1,30 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre/poder</th>
+
+    </tr>
+  </thead>
+  <tbody >
+    <tr *ngFor="
+      let personaje of charactersFromMain;
+      let i=index;
+      let isFirst=first;
+      let isLast=last;
+      let isEven=even;
+      let isOdd=odd;
+      "
+      [ngClass]="{'list-group-item-success':isLast}"
+      >
+      <td>{{personaje.id}}</td>
+      <td>{{ personaje.name }}</td>
+      <td>{{ personaje.power }}</td>
+      <!-- <td *ngIf="i==3-1"><strong>Tird</strong></td> -->
+      <td>es el primero: {{isFirst}}</td>
+      <td>es el ultimo: {{isLast}}</td>
+      <td>es par: {{isEven}}</td>
+      <td>es impar: {{isOdd}}</td>
+      <td><button (click)="onDelete(personaje.id)" class="btn btn-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

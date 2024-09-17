@@ -1,0 +1,6 @@
+<h1 class="text-center my-4">Esta es la pagina de dbz</h1>
+
+<div class="container">
+  <app-add-character (onNewChracter)="DbzServiceTsService.onNewChracter($event)"></app-add-character>
+  <app-dbz-list (onDeleteCharacter)="DbzServiceTsService.onDeleteCharacter($event)" [charactersFromMain]="DbzServiceTsService.characters"></app-dbz-list>
+</div>
